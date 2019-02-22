@@ -11,6 +11,7 @@ import UIKit
 protocol AddItemViewControllerDelegate: class {
     func addItemViewControllerDidCancel(_ controller: AddItemTableViewController)
     func addItemViewController(_ controller: AddItemTableViewController, didFinishAdding item: ChecklistItem)
+    func addItemViewController(_ controller: AddItemTableViewController, didFinishEditing item: ChecklistItem)
 }
 
 class AddItemTableViewController: UITableViewController {
@@ -26,18 +27,18 @@ class AddItemTableViewController: UITableViewController {
     
     // Actions
     @IBAction func cancel(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
         delegate?.addItemViewControllerDidCancel(self)
     }
     
     @IBAction func done(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        let item = ChecklistItem()
-        if let textFieldText = textField.text {
+        if let item = itemToEdit, let text = textField.text {
+            item.text = text
+            delegate?.addItemViewController(self, didFinishEditing: item)
+        } else if let item = todoList?.newTodo(), let textFieldText = textField.text {
             item.text = textFieldText
+            item.checked = false
+            delegate?.addItemViewController(self, didFinishAdding: item)
         }
-        item.checked = false
-        delegate?.addItemViewController(self, didFinishAdding: item)
     }
     
     // MARK: - Views and Navigation
