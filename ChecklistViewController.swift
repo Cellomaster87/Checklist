@@ -73,7 +73,7 @@ class ChecklistViewController: UITableViewController {
         guard let checkmark = cell.viewWithTag(1001) as? UILabel else { return }
         
         if item.checked {
-            checkmark.text = "√"
+            checkmark.text = "🎯"
         } else {
             checkmark.text = ""
         }
