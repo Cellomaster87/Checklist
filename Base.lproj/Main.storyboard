@@ -74,7 +74,7 @@
         <!--Title-->
         <scene sceneID="UJA-iY-DbR">
             <objects>
-                <tableViewController id="mBC-On-Is1" customClass="ItemDetailV" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mBC-On-Is1" customClass="ItemDetailViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="HAQ-Pl-9CR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
