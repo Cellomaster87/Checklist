@@ -18,25 +18,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="Ngp-0O-7h1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="Ngp-0O-7h1">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ngp-0O-7h1" id="NGR-pr-7bm">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3H2-V9-dd5">
-                                            <rect key="frame" x="20" y="11" width="295" height="21"/>
+                                            <rect key="frame" x="40" y="10" width="42" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bn-7u-F87">
+                                            <rect key="frame" x="16" y="9" width="15" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="3H2-V9-dd5" firstAttribute="leading" secondItem="NGR-pr-7bm" secondAttribute="leading" constant="20" symbolic="YES" id="Ra7-bZ-qNT"/>
+                                        <constraint firstItem="8bn-7u-F87" firstAttribute="firstBaseline" secondItem="3H2-V9-dd5" secondAttribute="baseline" id="3HZ-A2-4PV"/>
+                                        <constraint firstItem="3H2-V9-dd5" firstAttribute="leading" secondItem="NGR-pr-7bm" secondAttribute="leading" constant="40" id="Ra7-bZ-qNT"/>
+                                        <constraint firstItem="8bn-7u-F87" firstAttribute="centerY" secondItem="3H2-V9-dd5" secondAttribute="centerY" id="ZXA-iY-Ukt"/>
                                         <constraint firstItem="3H2-V9-dd5" firstAttribute="top" secondItem="NGR-pr-7bm" secondAttribute="top" priority="751" constant="11" id="dnf-YG-Ulv"/>
+                                        <constraint firstItem="8bn-7u-F87" firstAttribute="baseline" secondItem="3H2-V9-dd5" secondAttribute="baseline" id="eQ4-lg-e2p"/>
+                                        <constraint firstItem="3H2-V9-dd5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bn-7u-F87" secondAttribute="trailing" constant="8" symbolic="YES" id="feH-hN-LkG"/>
                                         <constraint firstAttribute="bottom" secondItem="3H2-V9-dd5" secondAttribute="bottom" priority="750" constant="11.67" id="g0n-SI-87v"/>
-                                        <constraint firstAttribute="trailing" secondItem="3H2-V9-dd5" secondAttribute="trailing" constant="20" symbolic="YES" id="j81-H1-RMI"/>
+                                        <constraint firstItem="8bn-7u-F87" firstAttribute="leading" secondItem="NGR-pr-7bm" secondAttribute="leadingMargin" id="gPh-Qn-n6B"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3H2-V9-dd5" secondAttribute="trailing" constant="20" symbolic="YES" id="j81-H1-RMI"/>
+                                        <constraint firstItem="8bn-7u-F87" firstAttribute="bottom" secondItem="NGR-pr-7bm" secondAttribute="bottomMargin" id="lhE-pc-2Q0"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -57,7 +69,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XN-ae-2ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="51"/>
+            <point key="canvasLocation" x="1101.5999999999999" y="50.985221674876847"/>
         </scene>
         <!--Title-->
         <scene sceneID="UJA-iY-DbR">
