@@ -48,6 +48,9 @@
                                         <constraint firstItem="8bn-7u-F87" firstAttribute="top" secondItem="NGR-pr-7bm" secondAttribute="topMargin" id="jYJ-4d-2Yt"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mBC-On-Is1" kind="show" identifier="EditItemSegue" trigger="accessoryAction" id="mAT-Zj-8rF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -114,7 +117,7 @@
                                 <action selector="cancel:" destination="mBC-On-Is1" id="QZH-2b-ljH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Add" id="mSx-Yb-DiM">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="mSx-Yb-DiM">
                             <connections>
                                 <action selector="done:" destination="mBC-On-Is1" id="nBM-6f-SsH"/>
                             </connections>
@@ -149,4 +152,7 @@
             <point key="canvasLocation" x="204" y="50.985221674876847"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="mAT-Zj-8rF"/>
+    </inferredMetricsTieBreakers>
 </document>
