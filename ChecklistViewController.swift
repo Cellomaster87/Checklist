@@ -31,6 +31,12 @@ class ChecklistViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        tableView.setEditing(tableView.isEditing, animated: true)
     }
     
     // MARK: - Table View Data Source
@@ -52,6 +58,7 @@ class ChecklistViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             let item = todoList.todos[indexPath.row]
+            item.toggleChecked()
 
             configureCheckmark(for: cell, with: item)
             tableView.deselectRow(at: indexPath, animated: true)
@@ -61,6 +68,11 @@ class ChecklistViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         todoList.todos.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        todoList.move(item: todoList.todos[sourceIndexPath.row], to: destinationIndexPath.row)
+        tableView.reloadData()
     }
     
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
@@ -77,7 +89,6 @@ class ChecklistViewController: UITableViewController {
         } else {
             checkmarkCell.checkmarkLabel.text = ""
         }
-        item.toggleChecked()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
