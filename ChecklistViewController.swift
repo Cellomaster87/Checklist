@@ -64,18 +64,18 @@ class ChecklistViewController: UITableViewController {
     }
     
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
-        if let label = cell.viewWithTag(1000) as? UILabel {
-            label.text = item.text
+        if let checkmarkCell = cell as? ChecklistTableViewCell {
+            checkmarkCell.todoTextLabel.text = item.text
         }
     }
     
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
-        guard let checkmark = cell.viewWithTag(1001) as? UILabel else { return }
+        guard let checkmarkCell = cell as? ChecklistTableViewCell else { return }
         
         if item.checked {
-            checkmark.text = "🎯"
+            checkmarkCell.checkmarkLabel.text = "🎯"
         } else {
-            checkmark.text = ""
+            checkmarkCell.checkmarkLabel.text = ""
         }
         item.toggleChecked()
     }
