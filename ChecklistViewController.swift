@@ -13,6 +13,9 @@ class ChecklistViewController: UITableViewController {
     var todoList: TodoList
     var tableData: [[ChecklistItem?]?]!
     
+    let collation = UILocalizedIndexedCollation.current()
+    let sectionTitles = UILocalizedIndexedCollation.current().sectionTitles
+    
     @IBAction func addItem(_ sender: UIBarButtonItem) {
         let newRowIndex = todoList.todos.count
         _ = todoList.newTodo() // _ = not interested to work with the object returned by this method.
@@ -47,9 +50,8 @@ class ChecklistViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
         tableView.allowsMultipleSelectionDuringEditing = true
-        
-        let collation = UILocalizedIndexedCollation.current()
-        let sectionTitleCount = collation.sectionTitles.count
+    
+        let sectionTitleCount = sectionTitles.count
         var allSections = [[ChecklistItem?]?](repeating: nil, count: sectionTitleCount)
         var sectionNumber = 0
         
@@ -80,8 +82,6 @@ class ChecklistViewController: UITableViewController {
             configureText(for: cell, with: item)
             configureCheckmark(for: cell, with: item)
         }
-        
-        
         return cell
     }
     
@@ -92,15 +92,15 @@ class ChecklistViewController: UITableViewController {
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return UILocalizedIndexedCollation.current().sectionTitles
+        return sectionTitles
     }
     
     override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        return UILocalizedIndexedCollation.current().section(forSectionIndexTitle: index)
+        return collation.section(forSectionIndexTitle: index)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return UILocalizedIndexedCollation.current().sectionTitles[section]
+        return sectionTitles[section]
     }
     
     // MARK: - Rows
