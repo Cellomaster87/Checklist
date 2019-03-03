@@ -24,18 +24,33 @@ class TodoList {
         let row2Item = ChecklistItem()
         let row3Item = ChecklistItem()
         let row4Item = ChecklistItem()
+        let row5Item = ChecklistItem()
+        let row6Item = ChecklistItem()
+        let row7Item = ChecklistItem()
+        let row8Item = ChecklistItem()
+        let row9Item = ChecklistItem()
         
         row0Item.text = "Take a jog"
         row1Item.text = "Watch a movie"
         row2Item.text = "Code an app"
         row3Item.text = "Walk the dog"
         row4Item.text = "Study design pattern"
+        row5Item.text = "Go camping"
+        row6Item.text = "Pay bills"
+        row7Item.text = "Plan vacation"
+        row8Item.text = "Walk the cat"
+        row9Item.text = "Play games"
         
         addTodo(row0Item, for: .medium)
-        addTodo(row1Item, for: .medium)
-        addTodo(row2Item, for: .medium)
-        addTodo(row3Item, for: .medium)
-        addTodo(row4Item, for: .medium)
+        addTodo(row1Item, for: .low)
+        addTodo(row2Item, for: .high)
+        addTodo(row3Item, for: .no)
+        addTodo(row4Item, for: .high)
+        addTodo(row5Item, for: .medium)
+        addTodo(row6Item, for: .low)
+        addTodo(row7Item, for: .high)
+        addTodo(row8Item, for: .no)
+        addTodo(row9Item, for: .high)
     }
     
     func addTodo(_ item: ChecklistItem, for priority: Priority) {
