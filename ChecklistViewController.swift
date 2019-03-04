@@ -55,11 +55,6 @@ class ChecklistViewController: UITableViewController {
         tableView.allowsMultipleSelectionDuringEditing = true
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: true)
-        tableView.setEditing(tableView.isEditing, animated: true)
-    }
-    
     // MARK: - Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let priority = priorityForSectionIndex(section) {
@@ -82,6 +77,11 @@ class ChecklistViewController: UITableViewController {
     
     // MARK: - Table View Delegate Methods
     // MARK: - Sections
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        tableView.setEditing(tableView.isEditing, animated: true)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return TodoList.Priority.allCases.count
     }
