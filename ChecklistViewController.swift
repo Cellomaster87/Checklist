@@ -200,7 +200,5 @@ extension ChecklistViewController: ItemDetailViewControllerDelegate {
         }
         navigationController?.popViewController(animated: true)
     }
-    
-    
 }
 
